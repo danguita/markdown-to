@@ -1,7 +1,7 @@
 DOCKER_IMAGE_NAME := jagregory/pandoc:latest
 FILE_DIR_NAME     := $(shell dirname $(SOURCE_FILE))
 FILE_BASE_NAME    := $(shell basename $(SOURCE_FILE) | cut -d. -f1)
-DOCKER_RUN        := docker run -it --rm -v "$(FILE_DIR_NAME):/source"
+DOCKER_RUN        := docker run -d --rm -v "$(FILE_DIR_NAME):/source"
 
 .PHONY: pdf html
 
